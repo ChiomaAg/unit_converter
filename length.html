@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Unit Converter</title>
+</head>
+
+<body>
+    <header>
+        <h1>Unit Converter</h1>
+        <nav>
+            <a href="length.html"> Length</a> |
+            <a href="weight.html">Weight</a> |
+            <a href="temperature.html">Temperature</a>
+        </nav>
+    </header>
+    <hr>
+
+    <form target="_self">
+        <label for="value">Enter the length to convert:</label><br>
+        <input type="number" id="value" placeholder="Enter value" required><br>
+        <label for="fromUnit">Unit to convert from:</label><br>
+        <select id="fromUnit">
+            <option value="mm">mm</option>
+            <option value="cm" selected>cm</option>
+            <option value="m">m</option>
+            <option value="km">km</option>
+            <option value="in">in</option>
+            <option value="ft">ft</option>
+            <option value="yd">yd</option>
+            <option value="mi">mi</option>
+        </select><br>
+
+        <label for="toUnit">Unit to convert to</label><br>
+        <select id="toUnit">
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="m" selected>m</option>
+            <option value="km">km</option>
+            <option value="in">in</option>
+            <option value="ft">ft</option>
+            <option value="yd">yd</option>
+            <option value="mi">mi</option>
+        </select><br><br>
+        <button type="submit">Convert</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
