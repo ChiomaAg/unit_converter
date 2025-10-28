@@ -13,27 +13,38 @@ function convert(value, from, to, category) {
         console.log(result)
         return result
     }
+    else if (category === 'weight') {
+
+        const conversion_rate = {
+            mg: 0.001, g: 1, kg: 1000, oz: 28.35, lb: 453.592
+        }
+
+        result = value * conversion_rate[from] / conversion_rate[to]
+        console.log(result)
+        return result
+    }
 }
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const lengthValue = document.getElementById("value").value;
-    const convertFrom = document.getElementById("fromUnit").value;
-    const convertTo = document.getElementById("toUnit").value;
+function setup(measurement) {
+    document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const lengthValue = document.getElementById("value").value;
+        const convertFrom = document.getElementById("fromUnit").value;
+        const convertTo = document.getElementById("toUnit").value;
 
-    convert(lengthValue, convertFrom, convertTo, "length");
+        convert(lengthValue, convertFrom, convertTo, measurement);
 
-    document.body.innerHTML = `
-    <h1>Conversion Result</h1>
-    <p>${lengthValue} ${convertFrom} = ${result.toFixed(4)} ${convertTo}</p>
-    <button id="resetBtn">Reset</button>
-  `;
+        document.body.innerHTML = `
+        <h1>Conversion Result</h1>
+        <p>${lengthValue} ${convertFrom} = ${result.toFixed(4)} ${convertTo}</p>
+        <button id="resetBtn">Reset</button>
+        `;
 
-    // Add reset behavior
-    document.getElementById("resetBtn").addEventListener("click", function () {
-        window.location.reload(); // reloads the original form page
-    });
+        // Add reset behavior
+        document.getElementById("resetBtn").addEventListener("click", function () {
+            window.location.reload(); // reloads the original form page
+        });
 
-})
-
+    })
+}
 

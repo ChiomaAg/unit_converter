@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Unit Converter</title>
+</head>
+
+<body>
+  <header>
+    <h1>Unit Converter</h1>
+    <nav>
+      <a href="length.html"> Length</a> |
+      <a href="weight.html">Weight</a> |
+      <a href="temperature.html">Temperature</a>
+    </nav>
+  </header>
+  <hr>
+
+  <form target="_self">
+    <label for="value">Enter the weight to convert:</label><br>
+    <input type="number" id="value" placeholder="Enter value" required><br>
+    <label for="fromUnit">Unit to convert from:</label><br>
+    <select id="fromUnit">
+      <option value="mm">mg</option>
+      <option value="g" selected>g</option>
+      <option value="kg">kg</option>
+      <option value="oz">oz</option>
+      <option value="lb">lb</option>
+    </select><br>
+
+    <label for="toUnit">Unit to convert to</label><br>
+    <select id="toUnit">
+      <option value="mm">mg</option>
+      <option value="g">g</option>
+      <option value="kg" selected>kg</option>
+      <option value="oz">oz</option>
+      <option value="lb">lb</option>
+    </select><br><br>
+    <button type="submit">Convert</button>
+  </form>
+
+  <script src="index.js"></script>
+  <script>
+    setup("weight")
+  </script>
+</body>
+
+</html>
