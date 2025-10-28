@@ -23,6 +23,31 @@ function convert(value, from, to, category) {
         console.log(result)
         return result
     }
+
+    else if (category === 'temperature') {
+
+        if (from == "C" && to == "F") {
+            result = (value * 9 / 5) + 32;
+        }
+        if (from === 'C' && to === 'K') {
+            result = value + 273.15
+        }
+        if (from === 'F' && to === 'C') {
+            result = (value - 32) * 5 / 9;
+        }
+        if (from === 'F' && to === 'K') {
+            result = (value - 32) * 5 / 9 + 273.15;
+        }
+        if (from === 'K' && to === 'C') {
+            result = value - 273.15;
+        }
+        if (from === 'K' && to === 'F') {
+            result = (value - 273.15) * 9 / 5 + 32;
+        }
+
+        console.log(result)
+        return result
+    }
 }
 
 function setup(measurement) {
@@ -36,7 +61,7 @@ function setup(measurement) {
 
         document.body.innerHTML = `
         <h1>Conversion Result</h1>
-        <p>${lengthValue} ${convertFrom} = ${result.toFixed(4)} ${convertTo}</p>
+        <p>${lengthValue} ${convertFrom} = ${result.toFixed(2)} ${convertTo}</p>
         <button id="resetBtn">Reset</button>
         `;
 
